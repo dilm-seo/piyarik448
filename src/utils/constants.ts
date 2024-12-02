@@ -9,7 +9,7 @@ export const CURRENCY_PAIRS = {
 } as const;
 
 export const REFRESH_INTERVAL = 15 * 60 * 1000; // 15 minutes
-export const NEWS_LIMIT = 20;
+export const NEWS_LIMIT = 10;
 export const SENTIMENT_THRESHOLD = {
   POSITIVE: 0.3,
   NEGATIVE: -0.3
