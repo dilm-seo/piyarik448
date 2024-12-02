@@ -4,6 +4,8 @@ import { Settings } from './types';
 import { SettingsPanel } from './components/SettingsPanel';
 import { NewsFeed } from './components/NewsFeed';
 import { CurrencyStrengthChart } from './components/CurrencyStrengthChart';
+import { CorrelationTable } from './components/CorrelationTable';
+import { FloatingChatBot } from './components/FloatingChatBot';
 import { Header } from './components/Header';
 import { Preloader } from './components/Preloader';
 import { fetchForexNews, analyzeNews } from './services/api';
@@ -116,6 +118,12 @@ function App() {
                     isLoading={isLoadingNews}
                   />
                 </div>
+                
+                {analysis?.correlations && (
+                  <div className="glass-panel p-6">
+                    <CorrelationTable
+                      correlations={analysis.correlations}
+                    />
                   </div>
                 )}
               </>
@@ -124,6 +132,7 @@ function App() {
         </div>
       </main>
 
+      <FloatingChatBot settings={settings} />
     </div>
   );
 }
